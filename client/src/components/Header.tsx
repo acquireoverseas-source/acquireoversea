@@ -123,14 +123,16 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-          <div className="flex justify-between items-center h-14 md:h-16 lg:h-20">
+          <div className="flex justify-between items-center gap-4 h-[72px] md:h-[88px]">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 md:space-x-3 group">
-              <div className="relative h-14 md:h-16 lg:h-20 flex items-center">
+            <Link to="/" className="flex shrink-0 items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400">
+              <div className="flex items-center">
                 <img 
-                  src="/favicon.png" 
+                  src="/logo.png" 
                   alt="Acquire Overseas Education" 
-                  className="h-14 md:h-14 lg:h-[76px] w-auto object-contain"
+                  width={400}
+                  height={230}
+                  className="block h-16 md:h-20 w-auto object-contain"
                 />
               </div>
             </Link>
