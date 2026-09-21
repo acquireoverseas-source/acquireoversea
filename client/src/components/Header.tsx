@@ -135,9 +135,9 @@ const Header: React.FC = () => {
                   className="block h-16 md:h-20 w-auto object-contain"
                 />
               </div>
-              <span className="whitespace-nowrap text-[9px] min-[375px]:text-[11px] sm:text-sm font-bold leading-tight text-amber-400">
-                Acquire Overseas{' '}
-                <span className="text-white">Education</span>
+              <span className="whitespace-nowrap text-[9px] min-[375px]:text-[11px] sm:text-sm font-extrabold leading-tight text-amber-400">
+                ACQUIRE OVERSEAS{' '}
+                <span className="text-white">EDUCATION</span>
               </span>
             </Link>
 
