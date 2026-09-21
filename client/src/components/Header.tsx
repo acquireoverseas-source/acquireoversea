@@ -123,22 +123,26 @@ const Header: React.FC = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-          <div className="flex justify-between items-center gap-4 h-[72px] md:h-[88px]">
+          <div className="flex justify-between items-center gap-2 sm:gap-4 h-[72px] md:h-[88px]">
             {/* Logo */}
-            <Link to="/" className="flex shrink-0 items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400">
-              <div className="flex items-center">
+            <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400">
+              <div className="flex shrink-0 items-center">
                 <img 
                   src="/logo.png" 
-                  alt="Acquire Overseas Education" 
+                  alt="" 
                   width={400}
                   height={230}
                   className="block h-16 md:h-20 w-auto object-contain"
                 />
               </div>
+              <span className="whitespace-nowrap text-[9px] min-[375px]:text-[11px] sm:text-sm font-bold leading-tight text-amber-400">
+                Acquire Overseas{' '}
+                <span className="text-white">Education</span>
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden xl:flex items-center space-x-1 shrink-0">
               {mainNavigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
@@ -146,7 +150,7 @@ const Header: React.FC = () => {
                       <button
                         onMouseEnter={() => setActiveDropdown(item.dropdownType || 'services')}
                         onClick={() => setActiveDropdown(activeDropdown === (item.dropdownType || 'services') ? null : (item.dropdownType || 'services'))}
-                        className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 flex items-center space-x-1 ${
+                        className={`px-2 py-2 rounded-full text-sm font-bold transition-all duration-300 flex items-center space-x-1 ${
                           ((item.dropdownType === 'services' && servicesPaths.includes(location.pathname)) ||
                            (item.dropdownType === 'studyAbroad' && studyAbroadPaths.includes(location.pathname)))
                             ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
@@ -161,7 +165,7 @@ const Header: React.FC = () => {
                     <Link
                       to={item.path}
                       onMouseEnter={() => setActiveDropdown(null)}
-                      className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+                      className={`px-2 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                         location.pathname === item.path
                           ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
                           : 'text-white hover:bg-white/10 hover:text-white'
@@ -177,7 +181,7 @@ const Header: React.FC = () => {
             {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-1.5 rounded-xl text-white hover:bg-white/10 transition-all duration-300"
+              className="xl:hidden shrink-0 p-1.5 rounded-xl text-white hover:bg-white/10 transition-all duration-300"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={20} strokeWidth={2.5} /> : <Menu size={20} strokeWidth={2.5} />}
@@ -195,7 +199,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="hidden lg:block fixed top-14 md:top-16 lg:top-20 left-0 right-0 bottom-0 z-40 bg-black/60 backdrop-blur-md"
+              className="hidden xl:block fixed top-[88px] left-0 right-0 bottom-0 z-40 bg-black/60 backdrop-blur-md"
               onClick={() => setActiveDropdown(null)}
             />
             
@@ -204,7 +208,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="hidden lg:block fixed top-14 md:top-16 lg:top-20 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm shadow-2xl"
+              className="hidden xl:block fixed top-[88px] left-0 right-0 z-50 bg-black/95 backdrop-blur-sm shadow-2xl"
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
@@ -254,7 +258,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="hidden lg:block fixed top-14 md:top-16 lg:top-20 left-0 right-0 bottom-0 z-40 bg-black/60 backdrop-blur-md"
+              className="hidden xl:block fixed top-[88px] left-0 right-0 bottom-0 z-40 bg-black/60 backdrop-blur-md"
               onClick={() => setActiveDropdown(null)}
             />
             
@@ -264,7 +268,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="hidden lg:block fixed top-14 md:top-16 lg:top-20 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm shadow-2xl"
+              className="hidden xl:block fixed top-[88px] left-0 right-0 z-50 bg-black/95 backdrop-blur-sm shadow-2xl"
               onClick={(e) => e.stopPropagation()}
               onMouseLeave={() => setActiveDropdown(null)}
             >
@@ -398,7 +402,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-x-0 top-14 md:top-16 bottom-0 bg-black border-t border-gray-800 shadow-lg z-40 overflow-y-auto overscroll-contain"
+            className="xl:hidden fixed inset-x-0 top-[72px] md:top-[88px] bottom-0 bg-black border-t border-gray-800 shadow-lg z-40 overflow-y-auto overscroll-contain"
           >
             <div className="px-2 py-1 pb-4">
               <nav className="space-y-0">
